@@ -23,7 +23,7 @@ void _print(string x) {cout << x << "\n";}
 #define int long long
 #define nline "\n"
 #define all(x) x.begin(), x.end()
-// replace less<int> with greater to get a decreasing ordered_set
+// replace less<int> with greater<int> to get a decreasing ordered_set
 // replace less with less_equal<int> to also get duplicate elements in the set
 #define ordered_set tree<int, null_type, less<int>, rb_tree_tag,tree_order_statistics_node_update>
 
