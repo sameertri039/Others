@@ -13,7 +13,7 @@ using namespace __gnu_pbds;
 
 #define all(x) begin(x), end(x)
 #define allr(x) rbegin(x), rend(x)
-#define int long long
+#define int long long int
 #define nline "\n"
 
 // Custom hash map for unordered_map
@@ -30,12 +30,12 @@ struct custom_hash {
     return splitmix64(x + FIXED_RANDOM);
   }
 };
-template <typename T1, typename T2>
-using safe_map = unordered_map<T1, T2, custom_hash>;
+template <typename T1, typename T2> using safe_map = unordered_map<T1, T2, custom_hash>;
+
 // PBDS
-template <typename T>
-using oset =
-    tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+// replace less<int> with greater<int> to get a decreasing ordered_set
+// replace less with less_equal<int> to also get duplicate elements in the set
+template <typename T> using oset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 // Operator overloads
 template <typename T1, typename T2>  // cin >> pair<T1, T2>
@@ -58,6 +58,7 @@ ostream& operator<<(ostream& ostream, const vector<T>& c) {
     cout << it << " ";
   return ostream;
 }
+
 // Utility functions to print n arguments
 template <typename T>
 void print(T&& t) {
@@ -73,7 +74,9 @@ const int N = 1e6 + 1;
 
 void preCompute() {}
 
-void solve(int tc) {}
+void solve(int tc) {
+  
+}
 
 int32_t main() {
   ios_base::sync_with_stdio(false);
