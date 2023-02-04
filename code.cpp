@@ -4,6 +4,7 @@
 using namespace std;
 using namespace __gnu_pbds;
 
+// Compile with -DLOCAL
 #ifdef LOCAL
 #include "debug.h"
 #include "permutations.cpp"
@@ -11,10 +12,10 @@ using namespace __gnu_pbds;
 #define debug(...) 42
 #endif
 
+#define nline "\n"
 #define all(x) begin(x), end(x)
 #define allr(x) rbegin(x), rend(x)
 #define int long long int
-#define nline "\n"
 
 // Custom hash map for unordered_map
 struct custom_hash {
@@ -35,7 +36,7 @@ template <typename T1, typename T2> using safe_map = unordered_map<T1, T2, custo
 // PBDS
 // replace less<int> with greater<int> to get a decreasing ordered_set
 // replace less with less_equal<int> to also get duplicate elements in the set
-template <typename T> using oset = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+template <typename T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 // Operator overloads
 template <typename T1, typename T2>  // cin >> pair<T1, T2>
@@ -72,9 +73,11 @@ void print(T&& t, Args&&... args) {
 constexpr int MOD = 1e9 + 7;
 const int N = 1e6 + 1;
 
-void preCompute() {}
+void preCompute() {
 
-void solve(int tc) {
+}
+
+void solve() {
   
 }
 
@@ -87,8 +90,10 @@ int32_t main() {
 
   cin >> tests;
 
-  for (int tt = 1; tt <= tests; tt++)
+  for (int tt = 1; tt <= tests; tt++) {
     // cout << "Case #" << tt << ": ";
-    solve(tt);
+    solve();
+  }
   return 0;
 }
+
